@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Apply for Leave{% endblock %}
+
+{% block content %}
+<h2>Hello {{ name }}! Apply for Leave</h2>
+<form method="POST">
+    <select name="leave_type">
+        <option value="Casual">Casual Leave</option>
+        <option value="Sick">Sick Leave</option>
+        <option value="Earned">Earned Leave</option>
+    </select>
+    <input type="date" name="from_date" required>
+    <input type="date" name="to_date" required>
+    <textarea name="reason" placeholder="Reason" required></textarea>
+    <button type="submit">Submit Leave Request</button>
+</form>
+<p><a href="/status">View Leave Status</a> | <a href="/logout">Logout</a></p>
+<a href="/logout">
+  <button style="float: right; margin: 10px;">Logout</button>
+</a>
+
+{% endblock %}

@@ -1,0 +1,243 @@
+/* === Background and General Styling === */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('/static/images/banner.jpeg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* === Overlay Container === */
+.container {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.9);  /* semi-transparent */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* === Header === */
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px #000;
+}
+
+/* === Headings === */
+h2 {
+    text-align: center;
+    color: #0d47a1;
+    margin-bottom: 20px;
+}
+
+/* === Forms === */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea, select {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    transition: 0.2s ease-in-out;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #1565c0;
+    box-shadow: 0 0 8px rgba(21,101,192,0.3);
+}
+
+/* === Buttons === */
+button {
+    background: #1565c0;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #0d47a1;
+    transform: scale(1.03);
+}
+
+/* === Action Buttons === */
+.action-btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.approve {
+    background-color: green;
+}
+
+.reject {
+    background-color: red;
+}
+
+.disabled {
+    color: #888;
+    font-style: italic;
+}
+
+/* === Tables === */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* === Links === */
+a {
+    color: #0d47a1;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #f0f2f0, #000c40);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+h2, h3 {
+    text-align: center;
+    color: #003366;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #003366;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Action Buttons */
+.action-btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.approve {
+    background-color: green;
+}
+
+.reject {
+    background-color: red;
+}
+
+.action-btn:hover {
+    opacity: 0.85;
+}
+
+/* Side-by-side layout for buttons */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.disabled {
+    color: gray;
+    font-weight: bold;
+}
+
+.logout-button {
+    background-color: #cc0000;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    float: right;
+    margin: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.logout-button:hover {
+    background-color: #990000;
+}

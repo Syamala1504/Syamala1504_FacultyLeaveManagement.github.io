@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Leave Status{% endblock %}
+{% block content %}
+<div class="container">
+    <h2>Your Leave Status</h2>
+    <table>
+        <tr>
+            <th>Leave Type</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Reason</th>
+            <th>Status</th>
+        </tr>
+        {% for leave in leaves %}
+        <tr>
+            <td>{{ leave[0] }}</td>
+            <td>{{ leave[1] }}</td>
+            <td>{{ leave[2] }}</td>
+            <td>{{ leave[3] }}</td>
+            <td>
+                {% if leave[4] == 'Approved' %}
+                    <span style="color:green;"><b>Approved</b></span>
+                {% elif leave[4] == 'Rejected' %}
+                    <span style="color:red;"><b>Rejected</b></span>
+                {% else %}
+                    <span style="color:orange;"><b>Pending</b></span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/logout">
+  <button style="float: right; margin: 10px;">Logout</button>
+</a>
+
+</div>
+{% endblock %}

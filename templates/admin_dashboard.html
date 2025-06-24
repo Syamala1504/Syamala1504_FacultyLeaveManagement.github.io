@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Admin Dashboard</h2>
+    <h3>Leave Requests</h3>
+
+    <table>
+        <tr>
+            <th>Faculty Name</th>
+            <th>Type</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for req in requests %}
+        <tr>
+            <td>{{ req[1] }}</td>
+            <td>{{ req[2] }}</td>
+            <td>{{ req[3] }}</td>
+            <td>{{ req[4] }}</td>
+            <td>{{ req[5] }}</td>
+            <td>
+                {% if req[6] == 'Approved' %}
+                    <span style="color:green;"><b>Approved</b></span>
+                {% elif req[6] == 'Rejected' %}
+                    <span style="color:red;"><b>Rejected</b></span>
+                {% else %}
+                    <span style="color:orange;"><b>Pending</b></span>
+                {% endif %}
+            </td>
+            <td>
+                {% if req[6] == 'Pending' %}
+                    <div class="button-group">
+                        <a href="/approve/{{ req[0] }}" class="action-btn approve">Approve</a>
+                        <a href="/reject/{{ req[0] }}" class="action-btn reject">Reject</a>
+                    </div>
+                {% else %}
+                    <span class="disabled">Done</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p style="text-align:center; margin-top: 20px;">
+        <a href="/logout">
+  <button style="float: right; margin: 10px;">Logout</button>
+</a>
+
+    </p>
+</div>
+{% endblock %}
